@@ -68,6 +68,29 @@ namespace Perceptron
             return this.weights;
         }
 
+        public double predict(List<double> input)
+        {
+            double result = 0;
+            result = weightedSum(input, this.weights);
+            if (result >= 0)
+            {
+                result = 1;
+            }
+            else
+            {
+                result = -1;
+            }
+            Console.WriteLine("La flor es una: ");
+            if (result == 1)
+            {
+                Console.WriteLine("Iris-setosa");
+            }
+            else
+            {
+                Console.WriteLine("Iris-versicolor");
+            }
+            return result;
+        }
 
         private double weightedSum(List<double> input, List<double> weights)
         {
